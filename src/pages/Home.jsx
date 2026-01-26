@@ -11,80 +11,80 @@ export default function Home() {
     {
       id: 1,
       type: 'training',
-      horseName: 'Horse Name',
-      trainerName: "Trainer's name",
-      title: 'Training Completed',
-      trainingType: 'Sand Work',
+      horseName: 'Kinematic',
+      trainerName: 'Ronja Lamminen',
+      title: 'Träning Avslutad',
+      trainingType: 'Sandarbete',
       details: '4x1.35',
-      comment: '"Energetic and looking great"',
+      comment: '"Energisk och ser fantastisk ut"',
       likes: 17,
       comments: 2,
-      views: '26 views'
+      views: '26 visningar'
     },
     {
       id: 2,
       type: 'race',
-      horseName: 'Horse Name',
-      raceName: 'Race name',
-      title: 'Entered in Race',
-      date: 'Dec 03 - 2PM',
-      location: 'Place here',
-      distance: '1 Mile',
+      horseName: 'Pargas Sox',
+      raceName: 'V75 Lopp 4',
+      title: 'Anmäld Till Lopp',
+      date: '3 dec - 14:00',
+      location: 'Solvalla',
+      distance: '1 Mil',
       likes: 17,
       comments: 2,
-      views: '15 views'
+      views: '15 visningar'
     },
     {
       id: 3,
       type: 'stable',
-      stableName: 'Stable',
-      title: 'Monthly Report - November',
-      description: "Fantastic month with 7 wins and several great placements. We've been focused on preparing the horses for the spring season.",
+      stableName: 'Stall',
+      title: 'Månadsrapport - November',
+      description: 'Fantastisk månad med 7 segrar och flera fina placeringar. Vi har fokuserat på att förbereda hästarna inför vårsäsongen.',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop',
       likes: 17,
       comments: 2,
-      views: '13 views',
-      timestamp: '1 day ago'
+      views: '13 visningar',
+      timestamp: '1 dag sedan'
     },
     {
       id: 4,
       type: 'update',
-      horseName: 'Horse Name',
-      role: 'Caretaker',
-      title: 'Update from the stable',
-      description: 'This horse is doing great.',
+      horseName: 'Deeply Express',
+      role: 'Skötare',
+      title: 'Uppdatering från stallet',
+      description: 'Hästen mår utmärkt och är i toppform.',
       image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&auto=format&fit=crop',
       likes: 17,
       comments: 2,
-      views: '22 views',
-      timestamp: '1 day ago'
+      views: '22 visningar',
+      timestamp: '1 dag sedan'
     },
     {
       id: 5,
       type: 'event',
       eventType: 'Event',
-      title: 'Horse Owners Party',
-      description: 'Welcome to our annual horse owners party! Food, drinks and mingling with other owners.',
-      date: 'Dec 03 - 2PM',
-      location: 'Place here',
+      title: 'Hästägarfest',
+      description: 'Välkommen till vår årliga hästägarfest! Mat, dryck och mingel med andra delägare.',
+      date: '3 dec - 14:00',
+      location: 'Solvalla',
       attending: 22,
       likes: 17,
       comments: 2,
-      views: '13 views',
-      timestamp: '2h ago'
+      views: '13 visningar',
+      timestamp: '2 tim sedan'
     },
     {
       id: 6,
       type: 'race-event',
       eventType: 'Event',
-      title: 'Upcoming Race Day',
-      description: '4 horses from the stable will compete',
-      date: 'Dec 03 - 2PM',
-      location: 'Place here',
-      horses: ['Horse name 1', 'Horse name 2', 'Horse name 3', 'Horse name 4'],
+      title: 'Kommande Tävlingsdag',
+      description: '4 hästar från stallet kommer att tävla',
+      date: '3 dec - 14:00',
+      location: 'Solvalla',
+      horses: ['Kinematic', 'Pargas Sox', 'Deeply Express', 'Costa Cortina'],
       likes: 17,
       comments: 3,
-      views: '13 views'
+      views: '13 visningar'
     }
   ];
 
@@ -104,15 +104,15 @@ export default function Home() {
             </div>
             <h3>{item.title}</h3>
             <div className="info-box">
-              <div className="label">Type</div>
+              <div className="label">Typ</div>
               <div className="value">{item.trainingType}</div>
             </div>
             <div className="info-box">
-              <div className="label">Details</div>
+              <div className="label">Detaljer</div>
               <div className="value">{item.details}</div>
             </div>
             <div className="info-box comment-box">
-              <div className="label">Comment:</div>
+              <div className="label">Kommentar:</div>
               <div className="value">{item.comment}</div>
             </div>
             <div className="feed-actions">
@@ -167,7 +167,7 @@ export default function Home() {
             </div>
             <h3>{item.title}</h3>
             <p className="subtitle">{item.description}</p>
-            <img src={item.image} alt="Stable report" className="feed-image" />
+            <img src={item.image} alt="Stallrapport" className="feed-image" />
             <div className="feed-actions">
               <div className="feed-actions-left">
                 <button className="feed-action"><Heart size={16} /> {item.likes}</button>
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
             <h3>{item.title}</h3>
             <p className="subtitle">{item.description}</p>
-            <img src={item.image} alt="Horse update" className="feed-image" />
+            <img src={item.image} alt="Hästuppdatering" className="feed-image" />
             <div className="feed-actions">
               <div className="feed-actions-left">
                 <button className="feed-action"><Heart size={16} /> {item.likes}</button>
@@ -221,7 +221,7 @@ export default function Home() {
               <span><MapPin size={14} /> {item.location}</span>
             </div>
             <div className="attending-count">
-              <Users size={14} /> {item.attending} attending
+              <Users size={14} /> {item.attending} deltar
             </div>
             <div className="feed-actions">
               <div className="feed-actions-left">
@@ -273,8 +273,8 @@ export default function Home() {
   return (
     <div className="page-wrapper">
       <Header
-        title="Home"
-        subtitle="Stay updated with your horses!"
+        title="Hem"
+        subtitle="Håll dig uppdaterad om dina hästar!"
         showMenu
         showNotification
         stableName="Mark John"

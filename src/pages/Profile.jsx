@@ -8,17 +8,17 @@ export default function Profile() {
   const navigate = useNavigate();
 
   const menuItems = [
-    { icon: User, label: 'Edit Profile' },
-    { icon: Bell, label: 'Notifications' },
-    { icon: Shield, label: 'Privacy & Security' },
-    { icon: Settings, label: 'Settings' }
+    { icon: User, label: 'Redigera Profil' },
+    { icon: Bell, label: 'Notifikationer' },
+    { icon: Shield, label: 'Sekretess & Säkerhet' },
+    { icon: Settings, label: 'Inställningar' }
   ];
 
   return (
     <div className="page-wrapper">
       <Header
-        title="Profile"
-        subtitle="Manage your account"
+        title="Profil"
+        subtitle="Hantera ditt konto"
         showMenu
         showNotification
       />
@@ -28,7 +28,7 @@ export default function Profile() {
           <Avatar initials="JM" style={{ width: '80px', height: '80px', fontSize: '28px', margin: '0 auto 16px' }} />
           <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '4px' }}>Johnson Mark</h3>
           <p style={{ color: '#6B7280', fontSize: '14px', marginBottom: '8px' }}>johnson.mark@email.com</p>
-          <span className="badge badge-owner">Stable Owner</span>
+          <span className="badge badge-owner">Stallägare</span>
         </div>
 
         <div className="card" style={{ padding: '8px 0' }}>
@@ -63,7 +63,7 @@ export default function Profile() {
             onClick={() => navigate('/')}
           >
             <LogOut size={20} />
-            <span style={{ flex: 1, fontSize: '14px' }}>Log Out</span>
+            <span style={{ flex: 1, fontSize: '14px' }}>Logga Ut</span>
           </div>
         </div>
       </div>

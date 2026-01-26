@@ -6,23 +6,23 @@ export default function BottomNav() {
     <nav className="bottom-nav">
       <NavLink to="/home" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Home size={24} />
-        <span>Home</span>
+        <span>Hem</span>
       </NavLink>
       <NavLink to="/horses" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Users size={24} />
-        <span>Horses</span>
+        <span>Hästar</span>
       </NavLink>
       <NavLink to="/matchmaking" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Sparkles size={24} />
-        <span>Matchmaking</span>
+        <span>Matchning</span>
       </NavLink>
       <NavLink to="/events" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Calendar size={24} />
-        <span>Events</span>
+        <span>Event</span>
       </NavLink>
       <NavLink to="/profile" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <User size={24} />
-        <span>Profile</span>
+        <span>Profil</span>
       </NavLink>
     </nav>
   );

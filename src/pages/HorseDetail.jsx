@@ -10,8 +10,8 @@ export default function HorseDetail() {
   const horse = {
     name: 'Deeply Express',
     image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&auto=format&fit=crop',
-    status: 'Active',
-    gender: 'Gelding',
+    status: 'Aktiv',
+    gender: 'Valack',
     father: 'Readly Express',
     mother: 'Lady Eowyn',
     caretaker: 'Ronja Lamminen',
@@ -22,16 +22,16 @@ export default function HorseDetail() {
   };
 
   const menuItems = [
-    { icon: UserPlus, label: 'Invite Fans' },
-    { icon: Star, label: 'Add to Favorites' },
-    { icon: AlertCircle, label: 'Report Issue' }
+    { icon: UserPlus, label: 'Bjud In Följare' },
+    { icon: Star, label: 'Lägg Till Som Favorit' },
+    { icon: AlertCircle, label: 'Rapportera Problem' }
   ];
 
   const features = [
-    { icon: BookOpen, iconClass: 'blue', title: 'About & History', subtitle: 'Pedigree & Background' },
-    { icon: Target, iconClass: 'orange', title: 'Planning', subtitle: 'Goals & Preferences' },
-    { icon: Activity, iconClass: 'purple', title: 'Training', subtitle: 'Updates & Schedule' },
-    { icon: FileText, iconClass: 'teal', title: 'Admin', subtitle: 'Finances & documents' }
+    { icon: BookOpen, iconClass: 'blue', title: 'Om & Historik', subtitle: 'Stamtavla & Bakgrund' },
+    { icon: Target, iconClass: 'orange', title: 'Planering', subtitle: 'Mål & Preferenser' },
+    { icon: Activity, iconClass: 'purple', title: 'Träning', subtitle: 'Uppdateringar & Schema' },
+    { icon: FileText, iconClass: 'teal', title: 'Admin', subtitle: 'Ekonomi & Dokument' }
   ];
 
   return (
@@ -61,52 +61,52 @@ export default function HorseDetail() {
 
       <div className="card overview-card">
         <div className="overview-header">
-          <h2>Overview</h2>
-          <span className="badge badge-active">Active</span>
+          <h2>Översikt</h2>
+          <span className="badge badge-active">Aktiv</span>
         </div>
 
         <div className="overview-grid">
           <div className="overview-item">
-            <div className="label">Name</div>
+            <div className="label">Namn</div>
             <div className="value">{horse.name}</div>
           </div>
           <div className="overview-item">
-            <div className="label">Gender</div>
+            <div className="label">Kön</div>
             <div className="value">{horse.gender}</div>
           </div>
           <div className="overview-item">
-            <div className="label">Father</div>
+            <div className="label">Far</div>
             <div className="value">{horse.father}</div>
           </div>
           <div className="overview-item">
-            <div className="label">Mother</div>
+            <div className="label">Mor</div>
             <div className="value">{horse.mother}</div>
           </div>
           <div className="overview-item">
-            <div className="label">Caretaker</div>
+            <div className="label">Skötare</div>
             <div className="value">{horse.caretaker}</div>
           </div>
           <div className="overview-item">
-            <div className="label">Owners</div>
+            <div className="label">Ägare</div>
             <div className="value">{horse.owners}</div>
           </div>
         </div>
       </div>
 
       <div className="card quick-stats" style={{ margin: '0 16px 16px' }}>
-        <h3>Quick Stats</h3>
+        <h3>Snabbstatistik</h3>
         <div className="quick-stats-grid">
           <div className="quick-stat">
             <div className="value">{horse.races}</div>
-            <div className="label">Races</div>
+            <div className="label">Lopp</div>
           </div>
           <div className="quick-stat">
             <div className="value highlight">0{horse.wins}</div>
-            <div className="label">Wins</div>
+            <div className="label">Segrar</div>
           </div>
           <div className="quick-stat">
             <div className="value">{horse.winRate}</div>
-            <div className="label">Win Rate</div>
+            <div className="label">Vinstprocent</div>
           </div>
         </div>
       </div>

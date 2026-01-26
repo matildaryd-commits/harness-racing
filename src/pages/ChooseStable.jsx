@@ -12,8 +12,8 @@ export default function ChooseStable() {
       name: 'Mark Racing',
       owner: 'Johnson Mark',
       initials: 'JM',
-      role: 'Owner',
-      location: 'Place here',
+      role: 'Ägare',
+      location: 'Solvalla',
       horses: 10,
       wins: 6
     },
@@ -22,8 +22,8 @@ export default function ChooseStable() {
       name: 'Adam Stables',
       owner: 'Adam Smith',
       initials: 'AS',
-      role: 'Co-owner',
-      location: 'Place here',
+      role: 'Delägare',
+      location: 'Åby',
       horses: 10,
       wins: 6
     }
@@ -32,8 +32,8 @@ export default function ChooseStable() {
   return (
     <div className="page-wrapper">
       <Header
-        title="Choose Your Stable"
-        subtitle="Select a stable to view updates"
+        title="Välj Ditt Stall"
+        subtitle="Välj ett stall för att se uppdateringar"
       />
 
       <div className="content">
@@ -47,13 +47,13 @@ export default function ChooseStable() {
             <div className="stable-card-content">
               <h3>{stable.name}</h3>
               <p className="owner-name">{stable.owner}</p>
-              <span className={`badge ${stable.role === 'Owner' ? 'badge-owner' : 'badge-co-owner'}`}>
+              <span className={`badge ${stable.role === 'Ägare' ? 'badge-owner' : 'badge-co-owner'}`}>
                 {stable.role}
               </span>
               <div className="stable-stats">
                 <span><MapPin size={14} /> {stable.location}</span>
-                <span><Users size={14} /> {stable.horses} horses</span>
-                <span><Trophy size={14} /> {stable.wins} wins</span>
+                <span><Users size={14} /> {stable.horses} hästar</span>
+                <span><Trophy size={14} /> {stable.wins} segrar</span>
               </div>
             </div>
             <ChevronRight className="arrow" size={20} />
@@ -65,8 +65,8 @@ export default function ChooseStable() {
             <Plus size={24} />
           </div>
           <div>
-            <h3>Add New Stable</h3>
-            <p>Enter code or browse</p>
+            <h3>Lägg Till Nytt Stall</h3>
+            <p>Ange kod eller bläddra</p>
           </div>
         </div>
       </div>
