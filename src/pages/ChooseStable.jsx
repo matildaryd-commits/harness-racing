@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, MapPin, Users, Trophy, Plus } from 'lucide-react';
+import { ChevronRight, MapPin, Users, Plus } from 'lucide-react';
 import Header from '../components/Header';
 import Avatar from '../components/Avatar';
 
@@ -9,31 +9,28 @@ export default function ChooseStable() {
   const stables = [
     {
       id: 1,
-      name: 'Svedberg Trav',
+      name: 'Stall Markus Svedberg',
       owner: 'Markus Svedberg',
       initials: 'MS',
-      role: 'Ägare',
-      location: 'Solvalla',
-      horses: 10,
-      wins: 6
+      roles: ['Ägare', 'Delägare'],
+      location: 'Eskilstuna',
+      horses: 4
     },
     {
       id: 2,
-      name: 'Goop Racing',
+      name: 'Stall Björn Goop',
       owner: 'Björn Goop',
       initials: 'BG',
-      role: 'Delägare',
-      location: 'Åby',
-      horses: 10,
-      wins: 6
+      roles: ['Delägare'],
+      location: 'Färjestad',
+      horses: 12
     }
   ];
 
   return (
     <div className="page-wrapper">
       <Header
-        title="Välj Ditt Stall"
-        subtitle="Välj ett stall för att se uppdateringar"
+        title="Välj stall"
       />
 
       <div className="content">
@@ -47,13 +44,16 @@ export default function ChooseStable() {
             <div className="stable-card-content">
               <h3>{stable.name}</h3>
               <p className="owner-name">{stable.owner}</p>
-              <span className={`badge ${stable.role === 'Ägare' ? 'badge-owner' : 'badge-co-owner'}`}>
-                {stable.role}
-              </span>
+              <div className="stable-roles">
+                {stable.roles.map((role, idx) => (
+                  <span key={idx} className={`badge ${role === 'Ägare' ? 'badge-owner' : 'badge-co-owner'}`}>
+                    {role}
+                  </span>
+                ))}
+              </div>
               <div className="stable-stats">
                 <span><MapPin size={14} /> {stable.location}</span>
                 <span><Users size={14} /> {stable.horses} hästar</span>
-                <span><Trophy size={14} /> {stable.wins} segrar</span>
               </div>
             </div>
             <ChevronRight className="arrow" size={20} />
@@ -65,7 +65,7 @@ export default function ChooseStable() {
             <Plus size={24} />
           </div>
           <div>
-            <h3>Lägg Till Nytt Stall</h3>
+            <h3>Lägg till nytt stall</h3>
             <p>Ange kod eller bläddra</p>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function Welcome() {
   const browseStables = [
     {
       id: 1,
-      name: 'Svedberg Trav',
+      name: 'Markus Svedberg',
       owner: 'Markus Svedberg',
       initials: 'MS',
       location: 'Solvalla',
@@ -48,15 +48,14 @@ export default function Welcome() {
   return (
     <div className="page-wrapper">
       <Header
-        title="Välkommen!"
-        subtitle="Kom igång genom att gå med i ett stall"
+        title="Välkommen"
       />
 
       <div className="card access-code-card">
         <div className="key-icon">
           <Key size={24} />
         </div>
-        <h3>Har Du En Åtkomstkod?</h3>
+        <h3>Har du en åtkomstkod?</h3>
         <p>Ange din tränares kod för att få åtkomst</p>
         <input
           type="text"
@@ -66,7 +65,7 @@ export default function Welcome() {
           style={{ marginBottom: '12px' }}
         />
         <button className="btn btn-primary" onClick={() => navigate('/home')}>
-          Gå Med I Stall
+          Gå med i stall
         </button>
       </div>
 
@@ -74,7 +73,7 @@ export default function Welcome() {
         <div className="divider">ELLER</div>
 
         <div className="browse-section">
-          <h2>Bläddra Bland Stall</h2>
+          <h2>Bläddra bland stall</h2>
           <p>Följ stall eller begär ägaråtkomst</p>
 
           <div className="search-input-wrapper">
@@ -119,7 +118,7 @@ export default function Welcome() {
               </div>
               <div className="browse-card-buttons">
                 <button className="btn btn-primary btn-small">Följ</button>
-                <button className="btn btn-outline btn-small">Begär Åtkomst</button>
+                <button className="btn btn-outline btn-small">Begär åtkomst</button>
               </div>
             </div>
           ))}

@@ -7,9 +7,16 @@ import Welcome from './pages/Welcome';
 import Home from './pages/Home';
 import Horses from './pages/Horses';
 import HorseDetail from './pages/HorseDetail';
+import Pedigree from './pages/Pedigree';
+import Caretaker from './pages/Caretaker';
+import Owner from './pages/Owner';
+import Stable from './pages/Stable';
 import Events from './pages/Events';
 import Matchmaking from './pages/Matchmaking';
 import Profile from './pages/Profile';
+import InviteFans from './pages/InviteFans';
+import CreateSearch from './pages/CreateSearch';
+import SearchDetail from './pages/SearchDetail';
 
 function App() {
   return (
@@ -20,9 +27,16 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/horses" element={<Horses />} />
         <Route path="/horses/:id" element={<HorseDetail />} />
+        <Route path="/horses/:id/pedigree" element={<Pedigree />} />
+        <Route path="/horses/:id/invite" element={<InviteFans />} />
+        <Route path="/caretaker" element={<Caretaker />} />
+        <Route path="/owner" element={<Owner />} />
+        <Route path="/stable" element={<Stable />} />
         <Route path="/events" element={<Events />} />
         <Route path="/events/:id" element={<Events />} />
         <Route path="/matchmaking" element={<Matchmaking />} />
+        <Route path="/matchmaking/create" element={<CreateSearch />} />
+        <Route path="/matchmaking/search/:id" element={<SearchDetail />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
