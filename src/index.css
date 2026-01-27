@@ -2054,6 +2054,13 @@ input::placeholder {
   border-radius: 16px;
   padding: 20px;
   box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .feature-card-icon {
@@ -4107,4 +4114,768 @@ input::placeholder {
 
 .suggested-horse-actions .btn {
   flex: 1;
+}
+
+/* =====================================================
+   HORSE SUB-PAGES STYLES
+   ===================================================== */
+
+/* Subpage Header */
+.subpage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 16px 16px;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: white;
+}
+
+.subpage-header-content {
+  text-align: center;
+}
+
+.subpage-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.subpage-horse-name {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Planning Page */
+.planning-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.planning-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.planning-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.preferences-intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.preference-question {
+  margin-bottom: 12px;
+}
+
+.preference-question h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--background);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option:hover {
+  background: #E8F5F5;
+}
+
+.radio-option.selected {
+  border-color: var(--primary);
+  background: #E8F5F5;
+}
+
+.radio-option input {
+  display: none;
+}
+
+.radio-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.radio-option.selected .radio-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.radio-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.free-text-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.free-text-label svg {
+  color: var(--primary);
+}
+
+.free-text-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  min-height: 100px;
+}
+
+.free-text-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.save-preferences-btn {
+  margin-top: 16px;
+  margin-bottom: 100px;
+}
+
+/* All Owners View */
+.summary-card {
+  margin-bottom: 16px;
+}
+
+.summary-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.summary-intro {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.summary-question {
+  margin-bottom: 20px;
+}
+
+.summary-question:last-child {
+  margin-bottom: 0;
+}
+
+.summary-question h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.summary-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.summary-bar-track {
+  height: 8px;
+  background: var(--background);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.summary-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.responses-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.owner-response-card {
+  margin-bottom: 12px;
+}
+
+.owner-response-card.current-user {
+  border: 2px solid var(--primary);
+}
+
+.owner-response-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.owner-response-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.you-badge {
+  padding: 2px 8px;
+  background: var(--primary);
+  border-radius: 10px;
+  font-size: 11px;
+  color: white;
+  font-weight: 500;
+}
+
+.owner-response-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.response-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--background);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.response-question {
+  color: var(--text-muted);
+}
+
+.response-answer {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.owner-response-comment {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: #FEF3C7;
+  border-radius: 10px;
+}
+
+.owner-response-comment svg {
+  color: #D97706;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.owner-response-comment p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.empty-responses {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+}
+
+.empty-responses svg {
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-responses p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* Training Page */
+.training-status-card {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: white;
+}
+
+.training-status-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.training-status-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.training-stats-row {
+  display: flex;
+  gap: 24px;
+}
+
+.training-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-stat .stat-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.training-stat .stat-label {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title svg {
+  color: var(--primary);
+}
+
+.section-title.standalone {
+  margin-top: 16px;
+}
+
+/* Schedule List */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--background);
+  border-radius: 10px;
+}
+
+.schedule-item.race {
+  background: #E8F5F5;
+  border: 1px solid var(--primary-light);
+}
+
+.schedule-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 50px;
+}
+
+.schedule-icon {
+  font-size: 18px;
+}
+
+.schedule-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Training Update Card */
+.training-update-card {
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.training-update-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.training-update-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.training-type-badge {
+  font-size: 24px;
+}
+
+.training-update-info h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.training-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.training-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.training-details {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 8px;
+  animation: fadeIn 0.2s ease;
+}
+
+.training-detail-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.training-metrics {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  background: var(--background);
+  border-radius: 10px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.training-update-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.training-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.training-action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.expand-hint {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Admin Page */
+.admin-summary-card {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: white;
+}
+
+.admin-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.admin-summary-header > div {
+  text-align: center;
+}
+
+.admin-summary-label {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.admin-summary-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.admin-summary-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* Pending Invoice Alert */
+.pending-invoice-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FEF3C7;
+  border: 1px solid #F59E0B;
+  cursor: pointer;
+}
+
+.pending-alert-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D97706;
+}
+
+.pending-alert-content {
+  flex: 1;
+}
+
+.pending-alert-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #92400E;
+  margin-bottom: 2px;
+}
+
+.pending-alert-content p {
+  font-size: 12px;
+  color: #B45309;
+  margin: 0;
+}
+
+.pending-alert-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #92400E;
+}
+
+.pending-invoice-alert svg:last-child {
+  color: #D97706;
+}
+
+/* Invoice Card */
+.invoice-card {
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.invoice-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.invoice-month {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.invoice-month svg {
+  color: var(--primary);
+}
+
+.invoice-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.invoice-status.paid {
+  background: #D1FAE5;
+  color: #059669;
+}
+
+.invoice-status.pending {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.invoice-status.overdue {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.invoice-amounts {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: var(--background);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.invoice-amount-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoice-amount-item.highlight .amount-value {
+  color: var(--primary);
+}
+
+.amount-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.amount-value {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.invoice-details {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.2s ease;
+}
+
+.invoice-dates {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.invoice-details h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.invoice-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.invoice-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.invoice-item:last-child {
+  border-bottom: none;
+}
+
+.invoice-item.total {
+  font-weight: 600;
+  color: var(--text-primary);
+  border-top: 2px solid var(--border);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.invoice-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.invoice-actions .btn {
+  flex: 1;
+}
+
+.invoice-expand-hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
 }

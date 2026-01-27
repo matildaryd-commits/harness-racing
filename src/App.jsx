@@ -17,6 +17,9 @@ import Profile from './pages/Profile';
 import InviteFans from './pages/InviteFans';
 import CreateSearch from './pages/CreateSearch';
 import SearchDetail from './pages/SearchDetail';
+import HorsePlanning from './pages/HorsePlanning';
+import HorseTraining from './pages/HorseTraining';
+import HorseAdmin from './pages/HorseAdmin';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/horses/:id" element={<HorseDetail />} />
         <Route path="/horses/:id/pedigree" element={<Pedigree />} />
         <Route path="/horses/:id/invite" element={<InviteFans />} />
+        <Route path="/horses/:id/planning" element={<HorsePlanning />} />
+        <Route path="/horses/:id/training" element={<HorseTraining />} />
+        <Route path="/horses/:id/admin" element={<HorseAdmin />} />
         <Route path="/caretaker" element={<Caretaker />} />
         <Route path="/owner" element={<Owner />} />
         <Route path="/stable" element={<Stable />} />

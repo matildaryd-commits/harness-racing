@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ChevronLeft, MoreVertical, UserPlus, Star, AlertCircle, BookOpen, Target, Activity, FileText, ChevronRight } from 'lucide-react';
+import { ChevronLeft, MoreVertical, UserPlus, Star, AlertCircle, Target, Activity, FileText, ChevronRight } from 'lucide-react';
 import BottomNav from '../components/BottomNav';
 import Avatar from '../components/Avatar';
 
@@ -107,10 +107,9 @@ export default function HorseDetail() {
   ];
 
   const features = [
-    { icon: BookOpen, iconClass: 'blue', title: 'Om & historik', subtitle: 'Stamtavla & bakgrund' },
-    { icon: Target, iconClass: 'orange', title: 'Planering', subtitle: 'Mål & preferenser' },
-    { icon: Activity, iconClass: 'purple', title: 'Träning', subtitle: 'Uppdateringar & schema' },
-    { icon: FileText, iconClass: 'teal', title: 'Admin', subtitle: 'Ekonomi & dokument' }
+    { icon: Target, iconClass: 'orange', title: 'Planering', subtitle: 'Mål & preferenser', path: `/horses/${id}/planning` },
+    { icon: Activity, iconClass: 'purple', title: 'Träning', subtitle: 'Uppdateringar & schema', path: `/horses/${id}/training` },
+    { icon: FileText, iconClass: 'teal', title: 'Admin', subtitle: 'Ekonomi & fakturor', path: `/horses/${id}/admin` }
   ];
 
   return (
@@ -200,7 +199,7 @@ export default function HorseDetail() {
 
       <div className="feature-grid">
         {features.map((feature, index) => (
-          <div key={index} className="feature-card">
+          <div key={index} className="feature-card" onClick={() => navigate(feature.path)}>
             <div className={`feature-card-icon ${feature.iconClass}`}>
               <feature.icon size={20} />
             </div>
