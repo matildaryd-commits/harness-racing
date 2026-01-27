@@ -9,9 +9,9 @@ export default function ChooseStable() {
   const stables = [
     {
       id: 1,
-      name: 'Mark Racing',
-      owner: 'Johnson Mark',
-      initials: 'JM',
+      name: 'Svedberg Trav',
+      owner: 'Markus Svedberg',
+      initials: 'MS',
       role: 'Ägare',
       location: 'Solvalla',
       horses: 10,
@@ -19,9 +19,9 @@ export default function ChooseStable() {
     },
     {
       id: 2,
-      name: 'Adam Stables',
-      owner: 'Adam Smith',
-      initials: 'AS',
+      name: 'Goop Racing',
+      owner: 'Björn Goop',
+      initials: 'BG',
       role: 'Delägare',
       location: 'Åby',
       horses: 10,

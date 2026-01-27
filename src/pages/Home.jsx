@@ -37,7 +37,7 @@ export default function Home() {
     {
       id: 3,
       type: 'stable',
-      stableName: 'Stall',
+      stableName: 'Svedberg Trav',
       title: 'Månadsrapport - November',
       description: 'Fantastisk månad med 7 segrar och flera fina placeringar. Vi har fokuserat på att förbereda hästarna inför vårsäsongen.',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop',
@@ -182,7 +182,7 @@ export default function Home() {
         return (
           <div key={item.id} className="card feed-card" onClick={() => navigate('/horses/1')}>
             <div className="feed-card-header">
-              <Avatar initials="JM" size="small" />
+              <Avatar initials="MS" size="small" />
               <div className="feed-card-header-text">
                 <h4>{item.horseName}</h4>
                 <p>{item.role}</p>
@@ -277,7 +277,7 @@ export default function Home() {
         subtitle="Håll dig uppdaterad om dina hästar!"
         showMenu
         showNotification
-        stableName="Mark John"
+        stableName="Markus Svedberg"
       />
 
       <div className="content">

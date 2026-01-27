@@ -12,9 +12,9 @@ export default function Welcome() {
   const browseStables = [
     {
       id: 1,
-      name: 'Mark Racing',
-      owner: 'Johnson Mark',
-      initials: 'JM',
+      name: 'Svedberg Trav',
+      owner: 'Markus Svedberg',
+      initials: 'MS',
       location: 'Solvalla',
       horses: 15,
       wins: 10,
@@ -23,9 +23,9 @@ export default function Welcome() {
     },
     {
       id: 2,
-      name: 'Lindqvist Trav',
-      owner: 'Erik Lindqvist',
-      initials: 'EL',
+      name: 'Goop Racing',
+      owner: 'Björn Goop',
+      initials: 'BG',
       location: 'Åby',
       horses: 12,
       wins: 8,
@@ -34,9 +34,9 @@ export default function Welcome() {
     },
     {
       id: 3,
-      name: 'Björk Stables',
-      owner: 'Anna Björk',
-      initials: 'AB',
+      name: 'Kihlström Stall',
+      owner: 'Örjan Kihlström',
+      initials: 'ÖK',
       location: 'Jägersro',
       horses: 18,
       wins: 14,
