@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ChevronLeft, ChevronRight, Users, Search, Target, Euro,
-  Percent, Flag, Check, Sparkles
+  Percent, Flag, Check, Sparkles as SparklesIcon
 } from 'lucide-react';
 
 export default function CreateSearch() {
@@ -132,13 +132,19 @@ export default function CreateSearch() {
     <div className="page-wrapper create-search-page">
       {/* Header */}
       <div className="create-search-header">
-        <button className="back-btn-light" onClick={handleBack}>
-          <ChevronLeft size={20} />
-        </button>
-        <div className="step-indicator">
-          <span>Steg {step} av {totalSteps}</span>
+        <div className="header-section-context">
+          <SparklesIcon size={12} />
+          <span>Hitta häst</span>
         </div>
-        <div style={{ width: '36px' }} />
+        <div className="create-search-header-controls">
+          <button className="back-btn-light" onClick={handleBack}>
+            <ChevronLeft size={20} />
+          </button>
+          <div className="step-indicator">
+            <span>Steg {step} av {totalSteps}</span>
+          </div>
+          <div style={{ width: '36px' }} />
+        </div>
       </div>
 
       {/* Progress Bar */}
@@ -391,7 +397,7 @@ export default function CreateSearch() {
             </div>
 
             <div className="publish-info">
-              <Sparkles size={20} />
+              <SparklesIcon size={20} />
               <p>När du publicerar kommer systemet automatiskt matcha dig med andra som har liknande intressen.</p>
             </div>
           </div>
@@ -407,7 +413,7 @@ export default function CreateSearch() {
         >
           {step === totalSteps ? (
             <>
-              <Sparkles size={20} />
+              <SparklesIcon size={20} />
               Publicera sökning
             </>
           ) : (

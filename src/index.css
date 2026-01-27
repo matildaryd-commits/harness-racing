@@ -5,24 +5,45 @@
 }
 
 :root {
-  --primary: #0D7377;
-  --primary-dark: #065A5C;
-  --primary-light: #0A9396;
-  --gradient-start: #0A4D4F;
-  --gradient-end: #0D7377;
-  --background: #F5F7F8;
+  /* Bright blue - primary accent */
+  --primary: #4F7CFF;
+  --primary-dark: #3B63E0;
+  --primary-light: #7BA0FF;
+
+  /* Soft purple - secondary accent */
+  --accent: #A78BFA;
+  --accent-light: #C4B5FD;
+  --accent-dark: #8B5CF6;
+
+  /* Warm brownish header gradient */
+  --header-gradient: linear-gradient(
+    135deg,
+    #C9A98C 0%,
+    #D4B896 25%,
+    #E8D5C4 50%,
+    #C4A484 75%,
+    #B8967A 100%
+  );
+
+  /* Backgrounds & surfaces */
+  --background: #FAFAF9;
   --card-bg: #FFFFFF;
-  --text-primary: #1A1A2E;
-  --text-secondary: #6B7280;
-  --text-muted: #9CA3AF;
-  --border: #E5E7EB;
+
+  /* Text colors */
+  --text-primary: #1C1917;
+  --text-secondary: #57534E;
+  --text-muted: #A8A29E;
+
+  /* Utilities */
+  --border: #E7E5E4;
   --orange: #F97316;
   --orange-light: #FFF7ED;
-  --purple: #8B5CF6;
+  --purple: #A78BFA;
+  --blue: #4F7CFF;
   --pink: #EC4899;
   --success: #10B981;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -41,12 +62,29 @@ body {
   position: relative;
 }
 
-/* Header Styles */
+/* Header Styles - Warm blurred gradient */
 .header {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
   color: white;
   padding: 52px 16px 16px;
   position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section Context - subtle breadcrumb */
+.header-section-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  opacity: 0.9;
 }
 
 .header-content {
@@ -2348,7 +2386,8 @@ input::placeholder {
   align-items: center;
   justify-content: space-between;
   padding: 52px 16px 16px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
@@ -2489,13 +2528,18 @@ input::placeholder {
   gap: 16px;
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--primary);
   border: none;
   border-radius: 16px;
   color: white;
   cursor: pointer;
   margin-bottom: 16px;
   text-align: left;
+  transition: background 0.2s ease;
+}
+
+.create-search-btn:hover {
+  background: var(--primary-dark);
 }
 
 .create-search-icon {
@@ -2735,7 +2779,8 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   padding: 8px 12px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   color: white;
 }
@@ -3175,11 +3220,23 @@ input::placeholder {
 
 .create-search-header {
   display: flex;
+  flex-direction: column;
+  padding: 12px 16px 16px;
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.create-search-header .header-section-context {
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.create-search-header-controls {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 52px 16px 16px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  color: white;
+  width: 100%;
 }
 
 .step-indicator {
@@ -3190,12 +3247,12 @@ input::placeholder {
 /* Progress Bar */
 .progress-bar-container {
   height: 4px;
-  background: rgba(255,255,255,0.3);
+  background: var(--border);
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: white;
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -3679,17 +3736,31 @@ input::placeholder {
 
 .search-detail-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 52px 16px 16px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  flex-direction: column;
+  padding: 12px 16px 16px;
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   color: white;
   position: relative;
+}
+
+.search-detail-header .header-section-context {
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.search-detail-header-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .search-detail-header h1 {
   font-size: 18px;
   font-weight: 600;
+  flex: 1;
+  text-align: center;
 }
 
 .menu-btn-light {
@@ -3905,7 +3976,8 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   padding: 8px 12px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   color: white;
 }
@@ -4126,7 +4198,8 @@ input::placeholder {
   align-items: center;
   justify-content: space-between;
   padding: 52px 16px 16px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
@@ -4447,7 +4520,8 @@ input::placeholder {
 
 /* Training Page */
 .training-status-card {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   color: white;
 }
 
@@ -4648,7 +4722,8 @@ input::placeholder {
 
 /* Admin Page */
 .admin-summary-card {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--header-gradient);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   color: white;
 }
 

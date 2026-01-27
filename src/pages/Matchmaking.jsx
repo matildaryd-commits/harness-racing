@@ -217,8 +217,9 @@ export default function Matchmaking() {
   return (
     <div className="page-wrapper">
       <Header
-        title="Matchning"
+        title="Hitta häst & delägare"
         stableName="Markus Svedberg"
+        section="Hitta häst"
       />
 
       <div className="content">

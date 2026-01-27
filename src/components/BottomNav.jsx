@@ -14,7 +14,7 @@ export default function BottomNav() {
       </NavLink>
       <NavLink to="/matchmaking" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Sparkles size={24} />
-        <span>Matchning</span>
+        <span>Hitta häst</span>
       </NavLink>
       <NavLink to="/events" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
         <Calendar size={24} />

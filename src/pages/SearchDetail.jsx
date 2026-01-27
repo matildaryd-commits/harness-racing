@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import {
   ChevronLeft, MoreVertical, Users, Target, Euro, Percent,
   Clock, Edit2, Trash2, Pause, Play, MessageCircle, Heart,
-  Check, X, ChevronRight, Star, Sparkles
+  Check, X, ChevronRight, Star, Sparkles as SparklesIcon
 } from 'lucide-react';
 import Avatar from '../components/Avatar';
 import BottomNav from '../components/BottomNav';
@@ -167,13 +167,19 @@ export default function SearchDetail() {
     <div className="page-wrapper">
       {/* Header */}
       <div className="search-detail-header">
-        <button className="back-btn-light" onClick={() => navigate('/matchmaking')}>
-          <ChevronLeft size={20} />
-        </button>
-        <h1>Sökdetaljer</h1>
-        <button className="menu-btn-light" onClick={() => setShowMenu(!showMenu)}>
-          <MoreVertical size={20} />
-        </button>
+        <div className="header-section-context">
+          <SparklesIcon size={12} />
+          <span>Hitta häst</span>
+        </div>
+        <div className="search-detail-header-controls">
+          <button className="back-btn-light" onClick={() => navigate('/matchmaking')}>
+            <ChevronLeft size={20} />
+          </button>
+          <h1>Sökdetaljer</h1>
+          <button className="menu-btn-light" onClick={() => setShowMenu(!showMenu)}>
+            <MoreVertical size={20} />
+          </button>
+        </div>
 
         {showMenu && (
           <div className="dropdown-menu">

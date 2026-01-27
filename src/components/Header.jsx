@@ -1,16 +1,23 @@
-import { ChevronLeft, Bell } from 'lucide-react';
+import { ChevronLeft, Bell, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header({
   title,
   showBack = false,
   stableName = null,
+  section = null,
   children
 }) {
   const navigate = useNavigate();
 
   return (
     <header className="header">
+      {section && (
+        <div className="header-section-context">
+          <Sparkles size={12} />
+          <span>{section}</span>
+        </div>
+      )}
       <div className="header-content">
         <div className="header-left">
           {showBack && (
