@@ -41,7 +41,7 @@ export default function Header({
         </div>
       </div>
 
-      {children}
+      {children && <div className="header-children">{children}</div>}
     </header>
   );
 }

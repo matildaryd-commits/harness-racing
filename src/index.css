@@ -5,92 +5,100 @@
 }
 
 :root {
-  /* Bright blue - primary accent */
-  --primary: #4F7CFF;
-  --primary-dark: #3B63E0;
-  --primary-light: #7BA0FF;
+  /* Coapp-inspired palette */
+  /* Primary - near black for CTAs and headings */
+  --primary: #1A1A1A;
+  --primary-dark: #000000;
+  --primary-light: #444444;
 
-  /* Soft purple - secondary accent */
-  --accent: #A78BFA;
-  --accent-light: #C4B5FD;
-  --accent-dark: #8B5CF6;
+  /* Accent - soft violet */
+  --accent: #7C6CFF;
+  --accent-light: #EDE9FF;
+  --accent-dark: #6355E0;
 
-  /* Warm brownish header gradient */
-  --header-gradient: linear-gradient(
-    135deg,
-    #C9A98C 0%,
-    #D4B896 25%,
-    #E8D5C4 50%,
-    #C4A484 75%,
-    #B8967A 100%
-  );
+  /* Header - clean white */
+  --header-gradient: #FFFFFF;
 
   /* Backgrounds & surfaces */
-  --background: #FAFAF9;
+  --background: #FFFFFF;
   --card-bg: #FFFFFF;
 
   /* Text colors */
-  --text-primary: #1C1917;
-  --text-secondary: #57534E;
-  --text-muted: #A8A29E;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --text-muted: #A0A0A0;
 
   /* Utilities */
-  --border: #E7E5E4;
-  --orange: #F97316;
-  --orange-light: #FFF7ED;
-  --purple: #A78BFA;
-  --blue: #4F7CFF;
-  --pink: #EC4899;
-  --success: #10B981;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --border: #EBEBEB;
+  --orange: #E08A4A;
+  --orange-light: #FFF4EB;
+  --purple: #7C6CFF;
+  --blue: #1A1A1A;
+  --pink: #E86B8A;
+  --success: #34A853;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Tints for hover/selected states */
+  --warm-tint: #F5F5F5;
+  --warm-tint-deep: #EBEBEB;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   background-color: #E5E5E5;
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
 }
 
 #root {
   max-width: 430px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: var(--background);
+  background-color: #F5F5F5;
   position: relative;
 }
 
-/* Header Styles - Warm blurred gradient */
+/* Header Styles - Soft, rounded with subtle violet tint */
 .header {
-  background: var(--header-gradient);
-  color: white;
-  padding: 52px 16px 16px;
+  color: var(--text-primary);
+  padding: 52px 16px 20px;
   position: relative;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #F0EDFF 0%, #FFFFFF 100%);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Header Section Context - subtle breadcrumb */
+/* Header Section Context - pill tags */
 .header-section-context {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 12px;
-  font-size: 10px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
   margin-bottom: 8px;
-  opacity: 0.9;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 10;
+  text-transform: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-children {
 }
 
 .header-left {
@@ -100,9 +108,10 @@ body {
 }
 
 .header h1 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .header-right {
@@ -112,9 +121,9 @@ body {
 }
 
 .header-btn {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  color: white;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text-primary);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -122,21 +131,31 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .header-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .stable-indicator {
   text-align: right;
   line-height: 1.2;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 6px 12px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.2s;
 }
 
 .stable-indicator .stable-label {
   display: block;
   font-size: 10px;
-  opacity: 0.8;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -152,14 +171,14 @@ body {
 }
 
 .stable-indicator:hover {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* Back Button */
 .back-button {
   background: none;
   border: none;
-  color: white;
+  color: var(--primary-dark);
   cursor: pointer;
   padding: 4px;
   display: flex;
@@ -171,15 +190,16 @@ body {
 .content {
   padding: 16px;
   padding-bottom: 100px;
+  background: #F7F7F7;
 }
 
-/* Cards */
+/* Cards - Coapp style: subtle border, rounded */
 .card {
   background: var(--card-bg);
   border-radius: 16px;
   padding: 16px;
   margin-bottom: 12px;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 
 .card-clickable {
@@ -231,13 +251,13 @@ body {
   color: var(--text-muted);
 }
 
-/* Badges */
+/* Badges - Coapp style: light violet pills */
 .badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
@@ -252,23 +272,23 @@ body {
 }
 
 .badge-active {
-  background: #D1FAE5;
-  color: #059669;
+  background: #E8F5E9;
+  color: #2E7D32;
 }
 
 .badge-race {
-  background: #DBEAFE;
-  color: #2563EB;
+  background: #EEF2FF;
+  color: var(--text-primary);
 }
 
 .badge-rest {
-  background: #E0E7FF;
-  color: #4F46E5;
+  background: #F5F5F5;
+  color: var(--text-secondary);
 }
 
 .badge-recovery {
-  background: #FEF3C7;
-  color: #D97706;
+  background: #FFF3E0;
+  color: #E65100;
 }
 
 .badge-mile {
@@ -326,7 +346,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: #E8F5F5;
+  background: var(--warm-tint);
   border: 2px dashed var(--primary-light);
 }
 
@@ -364,7 +384,7 @@ body {
 .access-code-card .key-icon {
   width: 48px;
   height: 48px;
-  background: #E8F5F5;
+  background: var(--warm-tint);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -423,10 +443,10 @@ input::placeholder {
   padding-left: 44px;
 }
 
-/* Buttons */
+/* Buttons - Coapp style: black pill CTAs */
 .btn {
   padding: 14px 24px;
-  border-radius: 12px;
+  border-radius: 24px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -455,7 +475,7 @@ input::placeholder {
 }
 
 .btn-outline:hover {
-  background: var(--background);
+  background: #F5F5F5;
 }
 
 .btn-small {
@@ -549,7 +569,7 @@ input::placeholder {
 }
 
 .browse-stats .stat-value.highlight {
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .browse-stats .stat-label {
@@ -597,7 +617,8 @@ input::placeholder {
 }
 
 .nav-item.active {
-  color: var(--primary);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .nav-item svg {
@@ -620,30 +641,30 @@ input::placeholder {
 .feed-card-icon {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .feed-card-icon.green {
-  background: #E8F5F0;
-  color: #10B981;
+  background: #ECFDF5;
+  color: #059669;
 }
 
 .feed-card-icon.blue {
-  background: #EBF4FF;
-  color: #3B82F6;
+  background: #EEF2FF;
+  color: #4F6AE8;
 }
 
 .feed-card-icon.pink {
-  background: #FCE7F3;
-  color: var(--pink);
+  background: #FEF2F2;
+  color: #DC2626;
 }
 
 .feed-card-icon.orange {
-  background: var(--orange-light);
-  color: var(--orange);
+  background: #FFF7ED;
+  color: #D97706;
 }
 
 .feed-card-header-text h4 {
@@ -690,8 +711,8 @@ input::placeholder {
 
 /* Info Box */
 .info-box {
-  background: var(--background);
-  border-radius: 8px;
+  background: #F7F7F7;
+  border-radius: 10px;
   padding: 12px;
   margin-bottom: 8px;
 }
@@ -708,12 +729,12 @@ input::placeholder {
 }
 
 .comment-box {
-  background: #FFF7ED;
-  border-left: 3px solid var(--orange);
+  background: #F7F7F7;
+  border-left: 3px solid var(--text-muted);
 }
 
 .comment-box .label {
-  color: var(--orange);
+  color: var(--text-secondary);
 }
 
 /* Horse Tags */
@@ -842,50 +863,51 @@ input::placeholder {
   width: 100%;
   padding: 10px;
   margin-top: 8px;
-  background: var(--background);
-  border: none;
-  border-radius: 8px;
-  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-primary);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .expand-button:hover {
-  background: #E8F5F5;
+  background: #F7F7F7;
 }
 
-/* Attend Button */
+/* Attend Button - Coapp black pill */
 .attend-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 12px 0;
-  background: white;
-  border: 2px solid var(--primary);
-  border-radius: 10px;
-  color: var(--primary);
+  background: var(--primary);
+  border: none;
+  border-radius: 24px;
+  color: white;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .attend-button:hover {
-  background: #E8F5F5;
+  background: var(--primary-dark);
 }
 
 .attend-button.attending {
-  background: #D1FAE5;
-  border-color: #059669;
-  color: #059669;
+  background: #E8F5E9;
+  border: 1px solid #C8E6C9;
+  color: #2E7D32;
 }
 
 .attend-button.attending:hover {
-  background: #A7F3D0;
+  background: #C8E6C9;
 }
 
 /* Event Interaction Sections */
@@ -906,27 +928,29 @@ input::placeholder {
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  background: var(--background);
+  background: none;
   border: none;
-  border-radius: 20px;
-  font-size: 12px;
-  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-size: 13px;
+  color: var(--text-muted);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .interaction-tab:hover {
-  background: #E8F5F5;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .interaction-tab.active {
-  background: var(--primary);
-  color: white;
+  background: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom-color: var(--text-primary);
 }
 
 .interaction-content {
-  background: var(--background);
+  background: #F7F7F7;
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 12px;
@@ -969,17 +993,18 @@ input::placeholder {
 
 /* Exclusive info in feed card */
 .feed-exclusive-info {
-  background: #FFF7ED;
-  border-radius: 8px;
+  background: #F7F7F7;
+  border-radius: 10px;
   padding: 12px;
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--text-primary);
 }
 
 .feed-exclusive-info .info-label {
   font-size: 11px;
   font-weight: 600;
-  color: var(--orange);
+  color: var(--text-secondary);
   margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .feed-exclusive-info .info-title {
@@ -1478,7 +1503,7 @@ input::placeholder {
 }
 
 .owner-item:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .owner-name {
@@ -1713,7 +1738,7 @@ input::placeholder {
 }
 
 .sibling-item:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .sibling-info {
@@ -1737,7 +1762,7 @@ input::placeholder {
 .sibling-earnings {
   font-size: 13px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-primary);
   margin-right: 8px;
 }
 
@@ -1758,7 +1783,7 @@ input::placeholder {
 }
 
 .stable-link-item:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .stable-link-icon {
@@ -1841,7 +1866,7 @@ input::placeholder {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
   margin-bottom: 2px;
 }
 
@@ -1918,7 +1943,7 @@ input::placeholder {
 }
 
 .change-stable-btn:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
   color: var(--primary);
   border-color: var(--primary);
 }
@@ -1996,7 +2021,7 @@ input::placeholder {
 .role-ownership {
   font-size: 14px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .menu-item {
@@ -2040,11 +2065,11 @@ input::placeholder {
 }
 
 .fan-item {
-  background: #EDE9FE;
+  background: var(--warm-tint);
 }
 
 .fan-item:hover {
-  background: #DDD6FE;
+  background: var(--warm-tint-deep);
 }
 
 /* Quick Stats */
@@ -2070,7 +2095,7 @@ input::placeholder {
 }
 
 .quick-stat .value.highlight {
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .quick-stat .label {
@@ -2112,8 +2137,8 @@ input::placeholder {
 }
 
 .feature-card-icon.blue {
-  background: #E0F2FE;
-  color: #0284C7;
+  background: var(--warm-tint);
+  color: var(--primary);
 }
 
 .feature-card-icon.orange {
@@ -2122,12 +2147,12 @@ input::placeholder {
 }
 
 .feature-card-icon.purple {
-  background: #F3E8FF;
-  color: var(--purple);
+  background: var(--warm-tint-deep);
+  color: var(--text-primary);
 }
 
 .feature-card-icon.teal {
-  background: #E8F5F5;
+  background: var(--warm-tint);
   color: var(--primary);
 }
 
@@ -2150,7 +2175,7 @@ input::placeholder {
 
 /* Attending Badge */
 .attending-count {
-  color: var(--pink);
+  color: var(--text-secondary);
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -2214,8 +2239,8 @@ input::placeholder {
 }
 
 .filter-toggle.active {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
   color: white;
 }
 
@@ -2255,7 +2280,7 @@ input::placeholder {
   border-radius: 16px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 
 .filter-group {
@@ -2293,7 +2318,7 @@ input::placeholder {
 }
 
 .filter-chip:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
   border-color: var(--primary-light);
 }
 
@@ -2376,7 +2401,7 @@ input::placeholder {
 
 .horse-ownership .ownership-percent {
   font-size: 16px;
-  color: var(--primary);
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -2387,8 +2412,8 @@ input::placeholder {
   justify-content: space-between;
   padding: 52px 16px 16px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
 }
 
 .invite-header h1 {
@@ -2399,18 +2424,19 @@ input::placeholder {
 .back-btn-light {
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary-dark);
   border: none;
   cursor: pointer;
 }
 
 .back-btn-light:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.65);
 }
 
 .invite-card {
@@ -2421,7 +2447,7 @@ input::placeholder {
 .invite-icon {
   width: 56px;
   height: 56px;
-  background: #E8F5F5;
+  background: var(--warm-tint);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2513,7 +2539,7 @@ input::placeholder {
   display: block;
   font-size: 24px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .match-stat .stat-label {
@@ -2676,9 +2702,9 @@ input::placeholder {
   align-items: center;
   gap: 4px;
   padding: 6px 10px;
-  background: #D1FAE5;
+  background: #E3EADE;
   border-radius: 20px;
-  color: #059669;
+  color: #4D6B3E;
   font-size: 12px;
   font-weight: 600;
 }
@@ -2780,9 +2806,8 @@ input::placeholder {
   align-items: center;
   padding: 8px 12px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  color: white;
+  color: var(--primary-dark);
 }
 
 .match-percent-badge span:first-child {
@@ -2817,7 +2842,7 @@ input::placeholder {
 }
 
 .criteria-tag.highlight {
-  background: #E8F5F5;
+  background: var(--warm-tint);
   color: var(--primary);
   font-weight: 600;
 }
@@ -2956,7 +2981,7 @@ input::placeholder {
   display: block;
   font-size: 15px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .suggestion-price .source {
@@ -2998,7 +3023,7 @@ input::placeholder {
 
 .matched-search {
   padding: 4px 10px;
-  background: #E8F5F5;
+  background: var(--warm-tint-deep);
   border-radius: 12px;
   color: var(--primary);
   font-weight: 500;
@@ -3088,11 +3113,11 @@ input::placeholder {
 .record-badge {
   display: inline-block;
   padding: 4px 10px;
-  background: #D1FAE5;
+  background: #E3EADE;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #059669;
+  color: #4D6B3E;
   margin-top: 6px;
 }
 
@@ -3104,7 +3129,7 @@ input::placeholder {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .auction-end {
@@ -3223,8 +3248,8 @@ input::placeholder {
   flex-direction: column;
   padding: 12px 16px 16px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
 }
 
 .create-search-header .header-section-context {
@@ -3310,7 +3335,7 @@ input::placeholder {
 
 .option-card.selected {
   border-color: var(--primary);
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .option-icon {
@@ -3370,7 +3395,7 @@ input::placeholder {
 
 .type-option.selected {
   border-color: var(--primary);
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .type-icon {
@@ -3514,18 +3539,18 @@ input::placeholder {
 }
 
 .ownership-option:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .ownership-option.selected {
   border-color: var(--primary);
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .ownership-value {
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
   width: 80px;
 }
 
@@ -3566,7 +3591,7 @@ input::placeholder {
 
 .goal-option.selected {
   border-color: var(--primary);
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .goal-icon {
@@ -3739,8 +3764,8 @@ input::placeholder {
   flex-direction: column;
   padding: 12px 16px 16px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
   position: relative;
 }
 
@@ -3766,12 +3791,13 @@ input::placeholder {
 .menu-btn-light {
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(8px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary-dark);
   border: none;
   cursor: pointer;
 }
@@ -3836,8 +3862,8 @@ input::placeholder {
 }
 
 .status-badge.active {
-  background: #D1FAE5;
-  color: #059669;
+  background: #E3EADE;
+  color: #4D6B3E;
 }
 
 .status-badge.paused {
@@ -3977,9 +4003,8 @@ input::placeholder {
   align-items: center;
   padding: 8px 12px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  color: white;
+  color: var(--primary-dark);
 }
 
 .percent-value {
@@ -3996,7 +4021,7 @@ input::placeholder {
   display: flex;
   gap: 10px;
   padding: 12px;
-  background: #E8F5F5;
+  background: var(--warm-tint-deep);
   border-radius: 10px;
   margin-bottom: 12px;
 }
@@ -4171,7 +4196,7 @@ input::placeholder {
   display: block;
   font-size: 15px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .suggested-horse-price .source {
@@ -4199,8 +4224,8 @@ input::placeholder {
   justify-content: space-between;
   padding: 52px 16px 16px;
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
 }
 
 .subpage-header-content {
@@ -4283,12 +4308,12 @@ input::placeholder {
 }
 
 .radio-option:hover {
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .radio-option.selected {
   border-color: var(--primary);
-  background: #E8F5F5;
+  background: var(--warm-tint);
 }
 
 .radio-option input {
@@ -4478,7 +4503,7 @@ input::placeholder {
 
 .response-answer {
   font-weight: 500;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .owner-response-comment {
@@ -4521,8 +4546,8 @@ input::placeholder {
 /* Training Page */
 .training-status-card {
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
 }
 
 .training-status-header {
@@ -4594,8 +4619,8 @@ input::placeholder {
 }
 
 .schedule-item.race {
-  background: #E8F5F5;
-  border: 1px solid var(--primary-light);
+  background: var(--warm-tint);
+  border: 1px solid var(--border);
 }
 
 .schedule-date {
@@ -4690,7 +4715,7 @@ input::placeholder {
 .metric-value {
   font-size: 14px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .training-update-footer {
@@ -4723,8 +4748,8 @@ input::placeholder {
 /* Admin Page */
 .admin-summary-card {
   background: var(--header-gradient);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: white;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: var(--primary-dark);
 }
 
 .admin-summary-header {
@@ -4845,8 +4870,8 @@ input::placeholder {
 }
 
 .invoice-status.paid {
-  background: #D1FAE5;
-  color: #059669;
+  background: #E3EADE;
+  color: #4D6B3E;
 }
 
 .invoice-status.pending {
@@ -4874,7 +4899,7 @@ input::placeholder {
 }
 
 .invoice-amount-item.highlight .amount-value {
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .amount-label {
