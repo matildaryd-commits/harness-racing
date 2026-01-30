@@ -17,7 +17,7 @@
   --accent-dark: #4A1F2A;
 
   /* Header */
-  --header-gradient: #4A1F2A;
+  --header-gradient: #3E1A24;
 
   /* Backgrounds & surfaces */
   --background: #F7F4EF;
@@ -79,9 +79,9 @@ body {
   color: var(--text-on-primary);
   padding: 52px 16px 20px;
   position: relative;
-  background: #4A1F2A;
+  background: #3E1A24;
   border-radius: 0 0 24px 24px;
-  box-shadow: 0 2px 12px rgba(74, 31, 42, 0.15);
+  box-shadow: 0 2px 12px rgba(62, 26, 36, 0.15);
   overflow: hidden;
 }
 
@@ -93,7 +93,7 @@ body {
   width: 220px;
   height: 220px;
   background: #6A2E3B;
-  opacity: 0.25;
+  opacity: 0.3;
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
@@ -229,6 +229,7 @@ body {
   padding: 16px;
   margin-bottom: 12px;
   border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(74, 31, 42, 0.05);
 }
 
 .card-clickable {
@@ -291,13 +292,15 @@ body {
 }
 
 .badge-owner {
-  background: var(--primary);
-  color: var(--text-on-primary);
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
 }
 
 .badge-co-owner {
-  background: var(--primary);
-  color: var(--text-on-primary);
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
 }
 
 .badge-active {
@@ -677,23 +680,23 @@ input::placeholder {
 }
 
 .feed-card-icon.green {
-  background: #E8F0EB;
-  color: #4F7B63;
+  background: #DFF0E5;
+  color: #3F7356;
 }
 
 .feed-card-icon.blue {
-  background: #EDE8F0;
-  color: #5B4A6E;
+  background: #E6DEF0;
+  color: #4E3D65;
 }
 
 .feed-card-icon.pink {
-  background: #F5EDE3;
-  color: #9C6B3F;
+  background: #F2E6D6;
+  color: #8E5D32;
 }
 
 .feed-card-icon.orange {
-  background: #F5EDE3;
-  color: #9C6B3F;
+  background: #F2E6D6;
+  color: #8E5D32;
 }
 
 .feed-card-header-text h4 {
@@ -5105,7 +5108,7 @@ input::placeholder {
     content: '';
     display: block;
     height: 20px;
-    background: #4A1F2A;
+    background: #3E1A24;
     flex-shrink: 0;
     position: sticky;
     top: 0;
